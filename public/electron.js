@@ -1,6 +1,4 @@
-const electron = require('electron');
-const app = electron.app;
-const BrowserWindow = electron.BrowserWindow;
+const {app, BrowserWindow, nativeImage} = require('electron');
 const path = require('path');
 const isDev = require('electron-is-dev');
 
@@ -8,9 +6,12 @@ let mainWindow;
 
 // create window function
 function createWindow() {
+    let appIconUrl = path.join(__dirname, './assets/icons/icon@64.png');
+    let appIcon = nativeImage.createFromPath(appIconUrl);
     mainWindow = new BrowserWindow({
         width: 800, 
         height: 600,
+        icon: appIconUrl,
         webPreferences: {
             nodeIntegration: true
         }
