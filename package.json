@@ -1,0 +1,60 @@
+{
+  "name": "gatsby-cms",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "3.3.0"
+  },
+  "main": "public/electron.js",
+  "scripts": {
+    "start": "rescripts start",
+    "start-dev": "concurrently \"BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
+    "build": "rescripts build",
+    "test": "rescripts test",
+    "eject": "rescripts eject",
+    "postinstall": "electron-builder install-app-deps",
+    "preelectron-pack": "npm build",
+    "electron-pack": "build -mw" 
+  },
+  "build": {
+    "appId": "gatsby-cms",
+    "productName": "Gatsby CMS",
+    "copyright": "",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@rescripts/cli": "0.0.13",
+    "@rescripts/rescript-env": "0.0.11",
+    "concurrently": "^5.0.2",
+    "electron": "^7.1.9",
+    "electron-builder": "^22.2.0",
+    "electron-is-dev": "^1.1.0",
+    "wait-on": "^4.0.0"
+  }
+}
