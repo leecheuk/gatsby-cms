@@ -5,9 +5,11 @@ import Title from '../../components/Title';
 
 const Main = ({children, title, subtitle}) => {
     return (
-        <div className={styles["layout__main"]}>
+        <div className={styles["layout-main"]}>
             <Title title={title} subtitle={subtitle}/>
-            {children}
+            <div className={styles["layout__body-main"]}>
+                {children}
+            </div>
         </div>
     );
 };
