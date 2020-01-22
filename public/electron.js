@@ -1,7 +1,8 @@
 const {app, BrowserWindow, nativeImage, ipcMain} = require('electron');
 const path = require('path');
 const isDev = require('electron-is-dev');
-const {spawn} = require('child_process');
+const {spawn, exec} = require('child_process');
+const fs = require('fs');
 
 let mainWindow;
 
@@ -49,6 +50,43 @@ ipcMain.on('run-script', (e, cmd) => {
     }
 });
 
+// create file
+ipcMain.on('create-file', (e, cmd) => {
+    exec(`mkdir -p ${cmd.path}`, {
+        cwd: './public/website'
+    });
+});
+
+// write file
+ipcMain.on('write-file', (e, cmd) => {
+    writeFile(cmd);
+});
+
+// change values of config.json 
+ipcMain.on('update-config', (e, updateContent) => {
+    // get content 
+    const path = './website/config/config.json';
+    const config = JSON.parse(path);
+    // loop through update contents 
+    Object.keys(updateContent).forEach(key => {
+        config[key] = updateContent[key];
+    });
+    writeFile({
+        filename: path,
+        content: config
+    });
+});
+
+// get config file
+ipcMain.on('get-config', (e) => {
+    try {
+        let config = require('./website/config/config.json');
+        e.reply('config', { data: config });
+    } catch(e) {
+        console.log(e);
+    }
+});
+
 // initialize
 app.on('ready', createWindow);
 app.on('window-all-closed', () => {
@@ -59,3 +97,14 @@ app.on('activate', () => {
         createWindow();
     }
 });
+
+// helper functions
+function writeFile(fileObj) {
+    fs.writeFile(fileObj.filename, fileObj.content, function () {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log('write success');
+        }
+    });
+}

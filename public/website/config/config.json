@@ -1,0 +1,21 @@
+{
+  "url": "https://yourdomain.com",
+  "title": "My Blog",
+  "subtitle": "Amazing Blog",
+  "copyright": "My Blog © 2020",
+  "postsPerPage": 5,
+  "author": {
+    "name": "Gatsby Fan",
+    "photo_url": "#",
+    "bio_description": "",
+    "contacts": {
+      "email": "dev.cheuk.lee@gmail.com",
+      "github": "https://github.com/leecheuk",
+      "twitter": "",
+      "linkedin": "",
+      "youtube": "",
+      "dribble": "",
+      "instagram": ""
+    }
+  }
+}

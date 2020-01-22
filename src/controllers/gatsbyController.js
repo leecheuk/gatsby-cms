@@ -7,15 +7,28 @@ import GatsbyService from '../services/gatsbyService';
 class GatsbyController {
     constructor() {
         this.gs = new GatsbyService();
+        this.initializeConfig();
     }
+
     /**
      * Start gatsby server.
      */
     start() {
-        this.gs.start();
+        this.gs.runScript('start');
     }
     stop() {
-        this.gs.stop();
+        this.gs.runScript('stop');
+    }
+
+    /**
+     *  Config file
+     */
+    initializeConfig() {
+        this.gs.createConfig();
+    }
+    getConfig() {
+        this.gs.getConfig();
+        return this.gs.config;
     }
 
 }
