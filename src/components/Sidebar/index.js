@@ -6,7 +6,6 @@ const Sidebar = () => {
         <div className={styles['sidebar']}>
             <ul className={styles['sidebar__list']}>
                 <li className={styles['sidebar__item']}>Profile</li>
-                <li className={styles['sidebar__item']}>Blogs</li>
                 <li className={styles['sidebar__item']}>Posts</li>
                 <li className={styles['sidebar__item']}>Skills</li>
                 <li className={styles['sidebar__item']}>Portfolio</li>
