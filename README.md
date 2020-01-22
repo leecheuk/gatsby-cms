@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="./public/assets/icons/icon@32.png" />
+    <img src="./public/assets/icons/icon@16.png" />
 </p>
 <h1 align="center">
     CMS for gatsby.js
