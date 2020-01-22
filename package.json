@@ -53,10 +53,12 @@
   "devDependencies": {
     "@rescripts/cli": "0.0.13",
     "@rescripts/rescript-env": "0.0.11",
+    "@rescripts/utilities": "0.0.6",
     "concurrently": "^5.0.2",
     "electron": "^7.1.9",
     "electron-builder": "^22.2.0",
     "electron-is-dev": "^1.1.0",
-    "wait-on": "^4.0.0"
+    "wait-on": "^4.0.0",
+    "watch-ignore-webpack-plugin": "^1.0.0"
   }
 }
