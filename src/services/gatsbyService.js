@@ -2,16 +2,13 @@
  * GatsbyService 
  */
 
- import {ipcRenderer} from 'electron';
+import {ipcRenderer} from 'electron';
 import fs from 'fs';
 
  class GatsbyService {
      constructor() {
          this.getConfig();
          this.config = null;
-         ipcRenderer.on('config', ((e, replyObj) => {
-             this.config = replyObj.data;
-         }).bind(this))
      }
      // ask ipcMain to run script
      runScript(type) {
@@ -61,7 +58,8 @@ import fs from 'fs';
          ipcRenderer.send('update-config', config);
      }
      getConfig() {
-         ipcRenderer.send('get-config');
+         let config = ipcRenderer.sendSync('get-config');
+         return config;
      }
  }
 

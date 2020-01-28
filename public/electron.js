@@ -81,7 +81,7 @@ ipcMain.on('update-config', (e, updateContent) => {
 ipcMain.on('get-config', (e) => {
     try {
         let config = require('./website/config/config.json');
-        e.reply('config', { data: config });
+        e.returnValue = {data: config};
     } catch(e) {
         console.log(e);
     }

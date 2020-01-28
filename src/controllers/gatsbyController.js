@@ -27,8 +27,7 @@ class GatsbyController {
         this.gs.createConfig();
     }
     getConfig() {
-        this.gs.getConfig();
-        return this.gs.config;
+        return this.gs.getConfig();
     }
 
 }
