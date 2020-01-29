@@ -6,8 +6,10 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "node-sass": "^4.13.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.0"
   },
   "main": "public/electron.js",
@@ -19,7 +21,7 @@
     "eject": "rescripts eject",
     "postinstall": "electron-builder install-app-deps",
     "preelectron-pack": "npm build",
-    "electron-pack": "build -mw" 
+    "electron-pack": "build -mw"
   },
   "build": {
     "appId": "gatsby-cms",
@@ -51,10 +53,12 @@
   "devDependencies": {
     "@rescripts/cli": "0.0.13",
     "@rescripts/rescript-env": "0.0.11",
+    "@rescripts/utilities": "0.0.6",
     "concurrently": "^5.0.2",
     "electron": "^7.1.9",
     "electron-builder": "^22.2.0",
     "electron-is-dev": "^1.1.0",
-    "wait-on": "^4.0.0"
+    "wait-on": "^4.0.0",
+    "watch-ignore-webpack-plugin": "^1.0.0"
   }
 }
