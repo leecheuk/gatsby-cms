@@ -11,7 +11,7 @@ function createWindow() {
     let appIconUrl = path.join(__dirname, './assets/icons/icon@64.png');
     let appIcon = nativeImage.createFromPath(appIconUrl);
     mainWindow = new BrowserWindow({
-        width: 800, 
+        width: 1000, 
         height: 600,
         icon: appIconUrl,
         webPreferences: {
