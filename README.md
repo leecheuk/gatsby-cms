@@ -16,5 +16,5 @@ The product backlog is in artifacts folder.
 Development is in develop branch. Currently, working out communication with gatsby.js gui looks like this.
 
 <p align="center">
-    <img src="./gatsby-cms-beta.png" />
+    <img src="./gatsby-cms-beta.gif" />
 </p>
