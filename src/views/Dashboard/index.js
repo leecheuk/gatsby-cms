@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
-import LayoutMain from '../layouts/Main';
-import GatsbyController from '../controllers/gatsbyController';
+import LayoutMain from '../../layouts/Main';
+import GatsbyController from '../../controllers/gatsbyController';
 
 const Dashboard = () => {
     const gc = new GatsbyController();
